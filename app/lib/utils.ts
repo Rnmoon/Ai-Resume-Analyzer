@@ -7,6 +7,13 @@
  * @param bytes - The size in bytes
  * @returns A formatted string representing the size in KB, MB, or GB
  */
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+// Combine clsx and tailwind-merge
+export function cn(...inputs: any[]) {
+  return twMerge(clsx(inputs));
+}
 export function formatSize(bytes: number): string {
   if (bytes === 0) return '0 Bytes';
   
